@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="It's My Life 50+。50代からの健康、身体のケア、美容、趣味、お金と暮らしを応援する情報メディアです。">
+  <meta name="theme-color" content="#315b49">
+  <title>It's My Life 50+｜50代から、人生をもっと自分らしく。</title>
+  <style>
+    :root {
+      --green:#315b49; --green2:#47765f; --pale:#edf3ee;
+      --cream:#faf9f5; --ink:#27352e; --muted:#68756e;
+      --line:#e4e9e4; --white:#fff; --gold:#b18a4b;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0; background:var(--cream); color:var(--ink);
+      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",
+        "Yu Gothic",Meiryo,sans-serif; line-height:1.8;
+    }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(1080px, calc(100% - 36px)); margin:auto; }
+    header {
+      background:rgba(255,255,255,.96); border-bottom:1px solid var(--line);
+      position:sticky; top:0; z-index:10;
+    }
+    .head {
+      min-height:76px; display:flex; align-items:center;
+      justify-content:space-between; gap:20px;
+    }
+    .brand { font-family:Georgia,serif; color:var(--green); font-size:24px; font-weight:700; line-height:1.15; }
+    .brand small { display:block; font-family:inherit; font-size:10px; letter-spacing:.18em; color:var(--muted); margin-top:5px; }
+    nav { display:flex; gap:22px; align-items:center; font-size:13px; color:#526158; }
+    nav a:hover { color:var(--green2); }
+    .hero {
+      background:linear-gradient(115deg,rgba(27,57,43,.88),rgba(49,91,73,.72)),
+      radial-gradient(circle at 78% 20%,#9ab49a,transparent 45%);
+      color:white; padding:86px 0 82px; overflow:hidden;
+    }
+    .hero-inner { max-width:760px; }
+    .eyebrow { letter-spacing:.2em; font-size:12px; color:#d9e6dc; }
+    h1 { font-family:Georgia,"Yu Mincho",serif; font-size:clamp(34px,6vw,58px); line-height:1.35; font-weight:500; margin:18px 0; }
+    .hero p { color:#edf3ee; max-width:620px; font-size:16px; margin:0 0 28px; }
+    .btn {
+      display:inline-block; background:#fff; color:var(--green);
+      padding:12px 23px; border-radius:28px; font-weight:700; font-size:14px;
+    }
+    section { padding:64px 0; }
+    .section-kicker { color:var(--gold); font-size:11px; letter-spacing:.2em; font-weight:700; }
+    h2 { font-family:Georgia,"Yu Mincho",serif; font-size:30px; font-weight:500; margin:5px 0 8px; color:var(--green); }
+    .intro { color:var(--muted); margin:0 0 28px; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .category {
+      background:white; border:1px solid var(--line); border-radius:16px;
+      padding:22px; min-height:174px; transition:.2s;
+    }
+    .category:hover { transform:translateY(-3px); box-shadow:0 8px 24px #263b2d12; }
+    .symbol { font-size:25px; }
+    .category h3 { color:var(--green); margin:8px 0 4px; font-size:18px; }
+    .category p { color:var(--muted); font-size:13px; margin:0; }
+    .feature {
+      background:var(--pale); border-top:1px solid #e0e9e1; border-bottom:1px solid #e0e9e1;
+    }
+    .feature-box {
+      display:grid; grid-template-columns:1.1fr .9fr; gap:34px; align-items:center;
+      background:white; border-radius:20px; padding:30px;
+    }
+    .feature-art {
+      min-height:220px; border-radius:15px;
+      background:linear-gradient(145deg,#dbe8dc,#a8c1ad);
+      display:flex; align-items:center; justify-content:center; text-align:center;
+      color:var(--green); padding:20px; font-family:Georgia,serif; font-size:26px;
+    }
+    .tag { display:inline-block; background:#edf3ee; color:var(--green); border-radius:20px; padding:4px 10px; font-size:11px; }
+    .feature-box h3 { font-size:23px; color:var(--green); margin:12px 0 8px; }
+    .feature-box p { color:var(--muted); font-size:14px; }
+    .outline-btn { display:inline-block; border:1px solid var(--green); color:var(--green); padding:9px 18px; border-radius:24px; font-size:13px; font-weight:700; }
+    .message { text-align:center; max-width:720px; margin:auto; }
+    .message p { color:var(--muted); }
+    footer { background:#263f33; color:#e8eee9; padding:34px 0; }
+    footer .brand { color:white; }
+    footer p { font-size:12px; color:#c8d5cc; }
+    .footlinks { display:flex; gap:18px; flex-wrap:wrap; font-size:12px; margin:18px 0; }
+    .notice { border-top:1px solid #ffffff2b; padding-top:14px; color:#c8d5cc; font-size:11px; }
+    @media(max-width:700px) {
+      .head { min-height:66px; }
+      nav { gap:12px; font-size:11px; }
+      nav a:nth-child(2), nav a:nth-child(3) { display:none; }
+      .brand { font-size:21px; }
+      .hero { padding:66px 0 62px; }
+      section { padding:48px 0; }
+      .grid { grid-template-columns:1fr 1fr; gap:11px; }
+      .category { padding:16px; min-height:160px; }
+      .category h3 { font-size:15px; }
+      .category p { font-size:12px; }
+      .feature-box { grid-template-columns:1fr; padding:20px; gap:18px; }
+      .feature-art { min-height:150px; }
+      h2 { font-size:26px; }
+    }
+    @media(max-width:390px) { .grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap head">
+    <a class="brand" href="#">It's My Life 50+<small>LIVE WELL · AGE WELL · BE YOURSELF</small></a>
+    <nav aria-label="メインメニュー">
+      <a href="#about">このサイトについて</a>
+      <a href="#categories">ジャンル</a>
+      <a href="#featured">おすすめ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="about">
+    <div class="wrap hero-inner">
+      <div class="eyebrow">A NEW CHAPTER BEGINS</div>
+      <h1>50代から、人生を<br>もっと自分らしく。</h1>
+      <p>健康も、趣味も、毎日の暮らしも。これからの時間を、もっと元気に、もっと楽しく。It's My Life 50+ は、50代からの新しい一歩を応援するライフスタイルメディアです。</p>
+      <a class="btn" href="#categories">自分に合う情報を探す　→</a>
+    </div>
+  </section>
+
+  <section id="categories">
+    <div class="wrap">
+      <div class="section-kicker">FIND YOUR INTEREST</div>
+      <h2>気になるテーマから探す</h2>
+      <p class="intro">今の自分に必要な情報、これから始めたいことを見つけてください。</p>
+      <div class="grid">
+        <a class="category" href="#featured"><div class="symbol">🌿</div><h3>身体のケア</h3><p>肩こり・腰まわり・姿勢・ストレッチなど、毎日のセルフケア。</p></a>
+        <a class="category" href="#featured"><div class="symbol">☀️</div><h3>健康・体力</h3><p>運動習慣、筋力維持、睡眠など、健やかな毎日のヒント。</p></a>
+        <a class="category" href="#featured"><div class="symbol">✨</div><h3>美容・エイジングケア</h3><p>肌や髪のお手入れ、自分らしく年齢を重ねる楽しみ。</p></a>
+        <a class="category" href="#featured"><div class="symbol">🎨</div><h3>趣味・楽しみ</h3><p>旅行、映画、新しい趣味。日々に楽しみを増やす情報。</p></a>
+        <a class="category" href="#featured"><div class="symbol">🌱</div><h3>お金・暮らし</h3><p>家計、便利なサービス、スマホやAIの活用アイデア。</p></a>
+        <a class="category" href="#message"><div class="symbol">♡</div><h3>自分らしい生き方</h3><p>これからの人生を前向きに楽しむための小さなヒント。</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature" id="featured">
+    <div class="wrap">
+      <div class="section-kicker">FEATURED</div>
+      <h2>これから育てていく情報コーナー</h2>
+      <p class="intro">役立つ記事やオリジナル教材を、少しずつ充実させていきます。</p>
+      <div class="feature-box">
+        <div>
+          <span class="tag">準備中</span>
+          <h3>毎日を心地よくする、身体のセルフケア</h3>
+          <p>無理なく続けられる身体のケアや生活習慣について、分かりやすく紹介する記事を準備しています。</p>
+          <a class="outline-btn" href="#message">サイトの方針を見る</a>
+        </div>
+        <div class="feature-art">Your Life<br>｜ Your Choice</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="message">
+    <div class="wrap message">
+      <div class="section-kicker">IT'S YOUR LIFE</div>
+      <h2>これからの人生を、あなたらしく。</h2>
+      <p>年齢を重ねることは、新しい楽しみや可能性に出会うこと。小さな発見や役立つ情報を通じて、毎日が少し前向きになる場所を目指します。</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">It's My Life 50+<small>LIVE WELL · AGE WELL · BE YOURSELF</small></div>
+    <div class="footlinks">
+      <a href="#about">サイトについて</a>
+      <a href="#categories">ジャンル</a>
+      <a href="#featured">おすすめ</a>
+    </div>
+    <p>※当サイトの健康情報は一般的な情報提供を目的とし、診断や治療に代わるものではありません。</p>
+    <div class="notice">© It's My Life 50+　All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>
