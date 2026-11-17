@@ -1,56 +1,157 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="暮らしや仕事に役立つ情報をわかりやすく紹介するブログです。">
-<title>暮らしと仕事の情報ブログ</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP",sans-serif;color:#263238;background:#f5f7fa;line-height:1.8}
-header{background:#fff;padding:22px 18px;border-bottom:1px solid #ddd}
-header h1{margin:0;color:#245b50;font-size:24px}
-header p{margin:4px 0 0;color:#667}
-nav{background:#245b50;padding:12px 18px}
-nav a{color:white;text-decoration:none;margin-right:18px;font-size:14px}
-main{max-width:850px;margin:28px auto;padding:0 16px}
-.hero{background:#e5f1ec;padding:32px 22px;border-radius:14px}
-.hero h2{font-size:25px;margin:0 0 12px;color:#245b50}
-.card{background:#fff;padding:22px;margin:18px 0;border-radius:12px;border:1px solid #e2e6e8}
-.card h3{margin-top:0;color:#245b50}
-footer{text-align:center;padding:25px;color:#667;font-size:13px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="It's My Life 50+。50代からの健康、身体のケア、美容、趣味、お金と暮らしを応援する情報メディアです。">
+  <meta name="theme-color" content="#eaf6ff">
+  <title>It's My Life 50+｜50代から、人生をもっと楽しく。</title>
+  <style>
+    :root {
+      --blue:#1767a8; --blue2:#2e8dcc; --sky:#eaf6ff;
+      --green:#4d9b55; --green-pale:#eff9e9; --cream:#fffdf6;
+      --ink:#263746; --muted:#667987; --line:#dceaf2;
+      --gold:#f3bd45; --white:#fff;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--cream); color:var(--ink);
+      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif; line-height:1.8; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(1100px,calc(100% - 36px)); margin:auto; }
+    header { background:rgba(255,255,255,.96); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:10; }
+    .head { min-height:82px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { color:var(--blue); font-family:Georgia,serif; font-size:clamp(22px,3vw,30px); font-weight:700; line-height:1.2; }
+    .brand small { display:block; color:var(--green); font-family:inherit; font-size:11px; letter-spacing:.08em; margin-top:4px; }
+    nav { display:flex; gap:22px; align-items:center; color:#476174; font-size:14px; }
+    nav a:hover { color:var(--blue2); }
+    .hero { position:relative; min-height:480px; display:flex; align-items:center; overflow:hidden; background:var(--sky); }
+    .hero-photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 38%; }
+    .hero:after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(255,255,255,.04) 0%,rgba(255,255,255,.08) 43%,rgba(255,255,255,.88) 66%,rgba(255,255,255,.94) 100%); }
+    .hero-inner { position:relative; z-index:1; width:100%; display:flex; justify-content:flex-end; padding:62px 0; }
+    .hero-copy { width:min(47%,490px); color:var(--blue); }
+    .eyebrow { color:var(--green); font-size:13px; font-weight:800; letter-spacing:.12em; }
+    h1 { font-size:clamp(30px,4.5vw,49px); line-height:1.45; margin:12px 0 14px; letter-spacing:.02em; }
+    .hero p { font-size:16px; color:#36566d; margin:0 0 24px; }
+    .btn { display:inline-block; background:var(--green); color:white; padding:12px 24px; border-radius:28px; font-weight:800; box-shadow:0 5px 14px #347b3c30; }
+    .btn:hover { background:#3d8546; transform:translateY(-1px); }
+    section { padding:62px 0; }
+    .section-kicker { color:var(--green); font-size:12px; letter-spacing:.15em; font-weight:800; }
+    h2 { color:var(--blue); font-size:clamp(25px,3vw,32px); margin:5px 0 8px; line-height:1.4; }
+    .intro { color:var(--muted); margin:0 0 26px; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .category { background:white; border:1px solid var(--line); border-radius:18px; padding:20px; min-height:160px; box-shadow:0 5px 16px #2d65800c; transition:.2s; }
+    .category:hover { transform:translateY(-4px); box-shadow:0 10px 24px #2d65801a; }
+    .symbol { width:48px; height:48px; display:grid; place-items:center; border-radius:50%; background:var(--sky); font-size:25px; }
+    .category:nth-child(2) .symbol,.category:nth-child(5) .symbol { background:#fff4d7; }
+    .category:nth-child(3) .symbol,.category:nth-child(6) .symbol { background:var(--green-pale); }
+    .category h3 { color:var(--blue); margin:9px 0 3px; font-size:18px; }
+    .category p { color:var(--muted); font-size:13px; margin:0; }
+    .feature { background:linear-gradient(135deg,#edf8ff,#f2fae9); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .feature-box { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:center; background:white; border-radius:22px; padding:26px; box-shadow:0 8px 24px #28608010; }
+    .feature-art { min-height:230px; border-radius:16px; background:linear-gradient(135deg,#dff2ff,#e7f6d9); display:flex; align-items:center; justify-content:center; text-align:center; color:var(--blue); padding:20px; font-size:28px; font-weight:800; }
+    .tag { display:inline-block; background:#eaf6ff; color:var(--blue); border-radius:20px; padding:4px 12px; font-size:12px; font-weight:700; }
+    .feature-box h3 { font-size:23px; color:var(--blue); margin:12px 0 8px; }
+    .feature-box p { color:var(--muted); font-size:14px; }
+    .outline-btn { display:inline-block; border:1px solid var(--blue2); color:var(--blue); padding:9px 18px; border-radius:24px; font-size:13px; font-weight:800; }
+    .message { text-align:center; max-width:760px; margin:auto; }
+    .message p { color:var(--muted); }
+    footer { background:#19537f; color:#eef8ff; padding:34px 0; }
+    footer .brand { color:white; }
+    footer .brand small { color:#d4e9f6; }
+    footer p { font-size:12px; color:#d4e9f6; }
+    .footlinks { display:flex; gap:18px; flex-wrap:wrap; font-size:13px; margin:18px 0; }
+    .notice { border-top:1px solid #ffffff38; padding-top:14px; color:#d4e9f6; font-size:11px; }
+    @media(max-width:700px) {
+      .head { min-height:70px; }
+      nav { gap:12px; font-size:11px; }
+      nav a:nth-child(1),nav a:nth-child(3) { display:none; }
+      .hero { min-height:560px; align-items:flex-end; }
+      .hero-photo { height:100%; object-position:34% center; }
+      .hero:after { background:linear-gradient(0deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.9) 36%,rgba(255,255,255,.03) 75%); }
+      .hero-inner { padding:300px 0 34px; }
+      .hero-copy { width:100%; }
+      .hero p { font-size:14px; }
+      section { padding:46px 0; }
+      .grid { grid-template-columns:1fr 1fr; gap:11px; }
+      .category { padding:15px; min-height:155px; }
+      .category h3 { font-size:15px; }
+      .category p { font-size:12px; }
+      .feature-box { grid-template-columns:1fr; padding:18px; gap:16px; }
+      .feature-art { min-height:150px; }
+    }
+    @media(max-width:390px) { .grid { grid-template-columns:1fr; } }
+  </style>
 </head>
 <body>
 <header>
-<h1>暮らしと仕事の情報ブログ</h1>
-<p>毎日に役立つ情報を、わかりやすくお届けします。</p>
+  <div class="wrap head">
+    <a class="brand" href="#top">It's My Life 50+<small>～ 50代からの、もっと楽しい人生を ～</small></a>
+    <nav aria-label="メインメニュー">
+      <a href="#about">このサイトについて</a>
+      <a href="#categories">ジャンル</a>
+      <a href="#featured">おすすめ</a>
+    </nav>
+  </div>
 </header>
-<nav>
-<a href="#about">ブログについて</a>
-<a href="#topics">記事カテゴリー</a>
-</nav>
-<main>
-<section class="hero">
-<h2>知りたいことを、わかりやすく。</h2>
-<p>仕事・暮らし・健康・お金など、日々の疑問や悩みを解決するヒントを紹介していきます。</p>
-</section>
-<section id="about" class="card">
-<h3>このブログについて</h3>
-<p>このブログでは、毎日の生活に役立つ情報を調べ、初心者にもわかりやすい言葉で紹介します。</p>
-<p>内容を確認しながら、少しずつ記事を充実させていきます。</p>
-</section>
-<section id="topics" class="card">
-<h3>記事カテゴリー</h3>
-<ul>
-<li>仕事・働き方</li>
-<li>暮らし・生活の工夫</li>
-<li>健康・身体の知識</li>
-<li>お金・節約・副業</li>
-</ul>
-<p>記事はこれから順次追加していきます。</p>
-</section>
+<main id="top">
+  <section class="hero" id="about">
+    <img class="hero-photo" src="hero-couple.jpg" alt="青い海と青空のそばで、笑顔で未来を見つめる50代・60代の夫婦">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <div class="eyebrow">A NEW CHAPTER BEGINS</div>
+        <h1>50代からの人生は、<br>まだまだこれから！</h1>
+        <p>健康も、お金も、趣味も、仕事も。これからの毎日を、もっと豊かに、もっと自分らしく。It's My Life 50+ は、あなたの新しい一歩を応援します。</p>
+        <a class="btn" href="#categories">楽しみを見つける　→</a>
+      </div>
+    </div>
+  </section>
+  <section id="categories">
+    <div class="wrap">
+      <div class="section-kicker">FIND YOUR INTEREST</div>
+      <h2>気になるテーマから探す</h2>
+      <p class="intro">今の自分に必要な情報、これから始めたいことを見つけてください。</p>
+      <div class="grid">
+        <a class="category" href="#featured"><div class="symbol">💗</div><h3>身体のケア</h3><p>肩こり・腰まわり・姿勢・ストレッチなど、毎日のセルフケア。</p></a>
+        <a class="category" href="#featured"><div class="symbol">☀️</div><h3>健康・体力</h3><p>運動習慣、筋力維持、睡眠など、健やかな毎日のヒント。</p></a>
+        <a class="category" href="#featured"><div class="symbol">✨</div><h3>美容・エイジングケア</h3><p>肌や髪のお手入れ、自分らしく年齢を重ねる楽しみ。</p></a>
+        <a class="category" href="#featured"><div class="symbol">🎨</div><h3>趣味・旅行</h3><p>旅や映画、新しい趣味。日々に楽しみを増やす情報。</p></a>
+        <a class="category" href="#featured"><div class="symbol">🌱</div><h3>お金・暮らし</h3><p>家計、便利なサービス、スマホやAIの活用アイデア。</p></a>
+        <a class="category" href="#message"><div class="symbol">💻</div><h3>仕事・副業</h3><p>これからの働き方や、自分らしい収入づくりのヒント。</p></a>
+      </div>
+    </div>
+  </section>
+  <section class="feature" id="featured">
+    <div class="wrap">
+      <div class="section-kicker">FEATURED</div>
+      <h2>これからの毎日を、もっと楽しく</h2>
+      <p class="intro">暮らしに役立つ記事やアイデアを、少しずつ充実させていきます。</p>
+      <div class="feature-box">
+        <div>
+          <span class="tag">おすすめコンテンツ</span>
+          <h3>自分らしい「これから」を、一緒に見つけよう</h3>
+          <p>身体のケア、健康づくり、お金のこと、新しい趣味や働き方。知ってよかったと思える情報を、分かりやすくお届けします。</p>
+          <a class="outline-btn" href="#message">サイトの方針を見る</a>
+        </div>
+        <div class="feature-art">Your Life<br>｜ Your Choice</div>
+      </div>
+    </div>
+  </section>
+  <section id="message">
+    <div class="wrap message">
+      <div class="section-kicker">IT'S YOUR LIFE</div>
+      <h2>これからの人生を、あなたらしく。</h2>
+      <p>年齢を重ねることは、新しい楽しみや可能性に出会うこと。小さな発見や役立つ情報を通じて、毎日が少し前向きになる場所を目指します。</p>
+    </div>
+  </section>
 </main>
-<footer>© 暮らしと仕事の情報ブログ</footer>
+<footer>
+  <div class="wrap">
+    <div class="brand">It's My Life 50+<small>～ 50代からの、もっと楽しい人生を ～</small></div>
+    <div class="footlinks"><a href="#about">サイトについて</a><a href="#categories">ジャンル</a><a href="#featured">おすすめ</a></div>
+    <p>※当サイトの健康情報は一般的な情報提供を目的とし、診断や治療に代わるものではありません。</p>
+    <div class="notice">© It's My Life 50+　All rights reserved.</div>
+  </div>
+</footer>
 </body>
 </html>
