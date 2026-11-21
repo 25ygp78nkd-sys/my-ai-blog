@@ -7,30 +7,44 @@
 <title>It's My Life 50+｜50代からの、もっと楽しい人生を</title>
 <style>
 :root{--blue:#07519a;--deep:#123e70;--sky:#eaf7ff;--green:#75bd39;--cream:#fbfff0;--gold:#f5c928}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:#20334a;background:#f5fbff}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:18px}
+body{margin:0;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:#20334a;background:#f5fbff}
 a{color:inherit;text-decoration:none}.wrap{max-width:1100px;margin:auto}
 header{background:linear-gradient(100deg,#fff 0%,#f4fbff 55%,#bce5ff 100%);padding:12px 4%;display:flex;align-items:center;gap:16px;position:relative;z-index:5}
 .tree{width:72px;height:72px;flex:none}.brand{min-width:0;color:var(--blue)}.brand-name{font-family:Georgia,serif;font-style:italic;font-weight:bold;font-size:clamp(28px,5vw,48px);line-height:1.05;white-space:nowrap}.tagline{font-size:clamp(12px,2.2vw,19px);font-weight:700;margin-top:5px;letter-spacing:.04em}
 .menu{margin-left:auto;border:0;border-radius:15px;background:#fff;color:var(--blue);font-size:29px;width:60px;height:54px;box-shadow:0 2px 10px #78a8c533;cursor:pointer}
-.hero{position:relative;min-height:480px;overflow:hidden;background:#8fd2fa}
-.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:35% center}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 35%,rgba(226,246,255,.15) 48%,rgba(222,244,255,.92) 100%)}
-.hero-copy{position:relative;z-index:1;margin-left:auto;width:47%;padding:85px 5% 100px 0;color:var(--blue);text-align:center}
-.hero-copy h1{font-size:clamp(30px,5vw,56px);line-height:1.35;margin:0 0 24px;font-weight:900;letter-spacing:.02em}
-.underline{height:7px;width:82%;margin:-12px auto 28px;border-bottom:6px solid var(--gold);border-radius:50%;transform:rotate(-5deg)}
-.hero-copy p{font-weight:800;font-size:clamp(16px,2.2vw,23px);line-height:1.7;margin:0}
-.categories{position:relative;z-index:2;max-width:1000px;margin:-44px auto 0;padding:14px 10px;background:#fff;border-radius:28px;box-shadow:0 8px 20px #1a5c8b2b;display:grid;grid-template-columns:repeat(4,1fr)}
-.cat{display:flex;flex-direction:column;align-items:center;gap:7px;padding:8px 4px;color:#26384a;font-weight:800;font-size:clamp(13px,2vw,18px);border-right:1px solid #d5dce2}.cat:last-child{border:0}
-.cat-icon{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:30px}.red{background:#ff6e75}.yellow{background:#ffc629}.cyan{background:#4db9e9}.lime{background:#78c83d}
-.welcome{padding:52px 5% 26px;text-align:center;background:linear-gradient(180deg,#f5ffdf,#fffef4 75%,#eff9ff)}
+.hero{display:grid;grid-template-columns:57% 43%;min-height:440px;background:linear-gradient(135deg,#d9f1ff,#effaff);overflow:hidden}
+.hero-visual{min-width:0;min-height:440px;overflow:hidden}
+.hero-photo{width:100%;height:100%;min-height:440px;display:block;object-fit:cover;object-position:center 37%}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:42px 8%;color:var(--blue);text-align:center;background:linear-gradient(145deg,#e6f6ff,#ccecff)}
+.hero-copy h1{font-size:clamp(30px,4.2vw,52px);line-height:1.4;margin:0 0 20px;font-weight:900;letter-spacing:.02em}
+.underline{height:7px;width:82%;margin:0 auto 24px;border-bottom:6px solid var(--gold);border-radius:50%;transform:rotate(-5deg)}
+.hero-copy p{font-weight:800;font-size:clamp(16px,2vw,22px);line-height:1.8;margin:0}
+.categories{position:relative;z-index:2;max-width:1000px;margin:-34px auto 0;padding:13px 10px;background:#fff;border-radius:26px;box-shadow:0 8px 20px #1a5c8b2b;display:grid;grid-template-columns:repeat(4,1fr)}
+.cat{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:8px 4px;color:#26384a;font-weight:800;font-size:clamp(13px,2vw,18px);border-right:1px solid #d5dce2;text-align:center}
+.cat:last-child{border:0}.cat-icon{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:30px}.red{background:#ff6e75}.yellow{background:#ffc629}.cyan{background:#4db9e9}.lime{background:#78c83d}
+.welcome{padding:48px 5% 26px;text-align:center;background:linear-gradient(180deg,#f5ffdf,#fffef4 75%,#eff9ff)}
 .welcome h2{color:#26384a;font-size:clamp(25px,4vw,42px);margin:0 0 18px;line-height:1.35}.welcome h2 em{font-family:Georgia,serif;color:var(--blue);font-weight:bold}
 .leaves{color:#70b83b;font-size:30px;letter-spacing:8px}.welcome p{font-size:clamp(16px,2.3vw,23px);line-height:1.8;font-weight:700;margin:0 auto 24px;max-width:850px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1000px;margin:0 auto 40px;padding:0 4% 44px}
-.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 3px 9px #163c5b25;border:1px solid #dce5e8;transition:transform .2s}.card:hover{transform:translateY(-4px)}
-.card img{width:100%;height:175px;object-fit:cover;display:block}.card-label{padding:13px 12px;font-weight:800;font-size:clamp(15px,2vw,20px);display:flex;align-items:center;gap:9px}.arrow{background:#1599e8;color:white;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;flex:none}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1000px;margin:0 auto 40px;padding:0 4% 44px}
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 3px 9px #163c5b25;border:1px solid #dce5e8;transition:transform .2s;display:block}
+.card:hover{transform:translateY(-4px)}.card img{width:100%;height:155px;object-fit:cover;display:block}
+.card-label{padding:13px 12px;font-weight:800;font-size:clamp(14px,1.55vw,18px);display:flex;align-items:center;gap:9px}
+.arrow{background:#1599e8;color:white;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;flex:none}
+.work-art{height:155px;background:linear-gradient(135deg,#d8f4ff,#dff5d3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#17629a}
+.work-art span{font-size:66px;line-height:1}.work-art small{font-size:14px;font-weight:800}
 footer{text-align:center;padding:26px;background:#e5f5ff;color:#315575;font-size:14px}
-.drawer{display:none;position:absolute;right:4%;top:90px;background:#fff;border-radius:16px;box-shadow:0 8px 24px #173e5b30;padding:12px;min-width:190px}.drawer.open{display:grid}.drawer a{padding:12px;border-bottom:1px solid #edf1f4;color:var(--blue);font-weight:700}
-@media(max-width:650px){header{gap:9px;padding:10px 4%}.tree{width:54px;height:60px}.brand-name{font-size:clamp(24px,6vw,34px)}.tagline{font-size:11px}.menu{width:48px;height:46px;font-size:24px}.hero{min-height:430px}.hero-photo{object-position:28% center}.hero:after{background:linear-gradient(90deg,transparent 5%,rgba(224,245,255,.08) 42%,rgba(224,245,255,.88) 100%)}.hero-copy{width:53%;padding:85px 3% 100px 0}.hero-copy h1{font-size:clamp(23px,6vw,34px)}.hero-copy p{font-size:13px}.categories{margin:-38px 4% 0;padding:10px 4px;border-radius:22px}.cat{font-size:11px;gap:5px}.cat-icon{width:43px;height:43px;font-size:23px}.welcome{padding:38px 4% 20px}.welcome h2{font-size:24px}.welcome p{font-size:15px}.cards{gap:9px;padding:0 3% 30px}.card{border-radius:13px}.card img{height:105px}.card-label{font-size:12px;padding:9px 6px;gap:5px}.arrow{width:19px;height:19px;font-size:13px}}
+.drawer{display:none;position:absolute;right:4%;top:90px;background:#fff;border-radius:16px;box-shadow:0 8px 24px #173e5b30;padding:12px;min-width:190px}
+.drawer.open{display:grid}.drawer a{padding:12px;border-bottom:1px solid #edf1f4;color:var(--blue);font-weight:700}
+@media(max-width:700px){
+ header{gap:9px;padding:10px 4%}.tree{width:54px;height:60px}.brand-name{font-size:clamp(23px,6vw,34px)}.tagline{font-size:11px}.menu{width:48px;height:46px;font-size:24px}
+ .hero{display:flex;flex-direction:column;min-height:0}.hero-visual{height:290px;min-height:0}.hero-photo{height:290px;min-height:0;object-position:center 35%}
+ .hero-copy{padding:25px 7% 34px}.hero-copy h1{font-size:clamp(27px,7vw,36px);margin-bottom:12px}.underline{margin-bottom:16px}.hero-copy p{font-size:15px}
+ .categories{margin:-22px 4% 0;padding:9px 3px;border-radius:20px}.cat{font-size:11px;gap:5px;padding:6px 2px}.cat-icon{width:43px;height:43px;font-size:23px}
+ .welcome{padding:35px 4% 20px}.welcome h2{font-size:24px}.welcome p{font-size:15px}
+ .cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:0 3% 30px}.card{border-radius:13px}.card img,.work-art{height:120px}.card-label{font-size:13px;padding:9px 7px;gap:5px}.arrow{width:19px;height:19px;font-size:13px}.work-art span{font-size:52px}.work-art small{font-size:12px}
+}
+@media(min-width:701px) and (max-width:900px){.cards{gap:12px}.card img,.work-art{height:135px}.card-label{font-size:14px;padding:10px 8px}}
 </style>
 </head>
 <body>
@@ -38,21 +52,25 @@ footer{text-align:center;padding:26px;background:#e5f5ff;color:#315575;font-size
 <svg class="tree" viewBox="0 0 100 100" aria-label="木のロゴ"><path d="M49 91V43M49 63L29 47M50 57L72 39M49 75L27 67M50 73L73 61" stroke="#65ad35" stroke-width="5" fill="none" stroke-linecap="round"/><g fill="#79c83d"><circle cx="49" cy="17" r="10"/><circle cx="30" cy="25" r="9"/><circle cx="68" cy="23" r="9"/><circle cx="19" cy="42" r="8"/><circle cx="80" cy="42" r="8"/><circle cx="37" cy="43" r="8"/><circle cx="61" cy="43" r="8"/></g><path d="M18 94Q49 82 82 94" stroke="#65ad35" stroke-width="4" fill="none"/></svg>
 <div class="brand"><div class="brand-name">It's My Life 50+</div><div class="tagline">〜 50代からの、もっと楽しい人生を 〜</div></div>
 <button class="menu" aria-label="メニュー" onclick="document.querySelector('.drawer').classList.toggle('open')">☰</button>
-<nav class="drawer"><a href="#health">健康・カラダ</a><a href="#money">お金・資産</a><a href="#travel">趣味・旅行</a><a href="#work">仕事・副業</a></nav>
+<nav class="drawer"><a href="#health-card" onclick="document.querySelector('.drawer').classList.remove('open')">健康・カラダ</a><a href="#money-card" onclick="document.querySelector('.drawer').classList.remove('open')">お金・資産</a><a href="#travel-card" onclick="document.querySelector('.drawer').classList.remove('open')">趣味・旅行</a><a href="#work-card" onclick="document.querySelector('.drawer').classList.remove('open')">仕事・副業</a></nav>
 </header>
 <main class="wrap">
-<section class="hero"><img class="hero-photo" src="hero-couple.jpg" alt="海辺で笑顔を見せるシニア夫婦"><div class="hero-copy"><h1>50代からの人生は、<br>まだまだこれから！</h1><div class="underline"></div><p>健康・お金・趣味・仕事…<br>これからの毎日をもっと豊かに</p></div></section>
+<section class="hero">
+<div class="hero-visual"><img class="hero-photo" src="hero-couple.jpg" alt="海辺で笑顔を見せるシニア夫婦"></div>
+<div class="hero-copy"><h1>50代からの人生は、<br>まだまだこれから！</h1><div class="underline"></div><p>健康・お金・趣味・仕事…<br>これからの毎日をもっと豊かに</p></div>
+</section>
 <nav class="categories" aria-label="カテゴリー">
-<a class="cat" id="health" href="#health-card"><span class="cat-icon red">♡</span>健康・カラダ</a>
-<a class="cat" id="money" href="#money-card"><span class="cat-icon yellow">🐷</span>お金・資産</a>
-<a class="cat" id="travel" href="#travel-card"><span class="cat-icon cyan">✈</span>趣味・旅行</a>
-<a class="cat" id="work" href="#work-card"><span class="cat-icon lime">▣</span>仕事・副業</a>
+<a class="cat" href="#health-card"><span class="cat-icon red">♡</span>健康・カラダ</a>
+<a class="cat" href="#money-card"><span class="cat-icon yellow">🐷</span>お金・資産</a>
+<a class="cat" href="#travel-card"><span class="cat-icon cyan">✈</span>趣味・旅行</a>
+<a class="cat" href="#work-card"><span class="cat-icon lime">▣</span>仕事・副業</a>
 </nav>
 <section class="welcome"><div class="leaves">❧</div><h2>ようこそ！ <em>It's My Life 50+</em> へ</h2><p>50代からの人生を、もっと健康に、もっと楽しく、<br>もっと自由に。あなたの「これから」を応援します！</p></section>
 <section class="cards">
-<a class="card" id="health-card" href="#health"><img src="health.jpg" alt="健康づくりのイメージ"><div class="card-label"><span class="arrow">›</span>健康で元気な毎日</div></a>
-<a class="card" id="money-card" href="#money"><img src="money.jpg" alt="資産づくりのイメージ"><div class="card-label"><span class="arrow">›</span>安心の資産づくり</div></a>
-<a class="card" id="travel-card" href="#travel"><img src="travel.jpg" alt="南国の海辺のイメージ"><div class="card-label"><span class="arrow">›</span>人生を楽しむ旅</div></a>
+<a class="card" id="health-card" href="#health-card"><img src="health.jpg" alt="健康づくりのイメージ"><div class="card-label"><span class="arrow">›</span>健康で元気な毎日</div></a>
+<a class="card" id="money-card" href="#money-card"><img src="money.jpg" alt="資産づくりのイメージ"><div class="card-label"><span class="arrow">›</span>安心の資産づくり</div></a>
+<a class="card" id="travel-card" href="#travel-card"><img src="travel.jpg" alt="南国の海辺のイメージ"><div class="card-label"><span class="arrow">›</span>人生を楽しむ旅</div></a>
+<a class="card" id="work-card" href="#work-card"><div class="work-art"><span>💻</span><small>50代からの新しい挑戦</small></div><div class="card-label"><span class="arrow">›</span>仕事・副業に挑戦</div></a>
 </section>
 </main>
 <footer>© It's My Life 50+　〜 50代からの、もっと楽しい人生を 〜</footer>
